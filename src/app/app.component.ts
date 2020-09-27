@@ -1,5 +1,5 @@
 import { Product } from './product.model';
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'inventory-app';
   products: Product[];
 
   constructor() {
@@ -15,24 +14,36 @@ export class AppComponent {
       new Product(
         'MYSHOES',
         'Black Running Shoes',
-        '/assets/images/products/black-shoes.jpg',
-        ['Men', 'Shoes', 'Running Shoes'],
+        '/assets/images/products/red-shoes.jpg',
+        ['Men', 'Shoes', 'Shoes'],
         109.99),
       new Product(
-        'NEATOJACKET',
-        'Blue Jacket',
-        '/assets/images/products/blue-jacket.jpg',
-        ['Women', 'Apparel', 'Jackets & Vests'],
+        '24KGOLDCHAIN',
+        'Gold Chain',
+        '/assets/images/products/gold-chain.jpg',
+        ['Men', 'Apparel', 'Chains'],
         238.99),
       new Product(
         'NICEHAT',
-        'A Nice Black Hat',
-        '/assets/images/products/black-hat.jpg',
+        'A Nice Grey Hat',
+        '/assets/images/products/hat.jpg',
         ['Men', 'Accessories', 'Hats'],
-        29.99)
+        29.99),
+        new Product(
+          'SMARTWATCH',
+          'An Exclusive Smart Watch',
+          '/assets/images/products/watch.jpg',
+          ['Unisex', 'Accessories', 'Watch'],
+          56.99),
+        new Product(
+          'SMARTWATCH',
+          'Limited Edition Designer shades',
+          '/assets/images/products/shades.jpg',
+          ['Men', 'Accessories', 'Glasses'],
+          166.99)
     ];
   }
-  function productWasSelected(product: Product): void {
-    console.log("Product clicked: ", )
+  productWasSelected(product: Product): void {
+    console.log("Product clicked: ", product);
 }
 }

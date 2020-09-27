@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-4">
+        <app-product-image [product]="product"></app-product-image>
+    </div>
+    <div class="col-md-4 d-flex justify-item-center align-self-center">
+        <div>
+            <div class="font-weight-bolder">
+                {{ product.name }}
+            </div>
+            <div>
+                <div class="product-sku font-weight-bolder">
+                    SKU #{{ product.sku }}
+                </div>
+            </div>
+            <div>
+                <app-product-department [product]="product"></app-product-department>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 d-flex justify-item-center align-self-center">
+        <app-price-display class="font-weight-bolder" [price]="product.price"></app-price-display>
+    </div>
+</div>
